@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="680" viewBox="0 0 1280 680" role="img" aria-labelledby="title desc">
+<title id="title">AFTERBURNERR — Core Overdrive</title><desc id="desc">Animated experimental reactor. AI tooling, automation and game systems. Go, Python, TypeScript and Java.</desc>
+<style>text{font-family:Arial,Helvetica,sans-serif} .mono{font-family:'Courier New',monospace} @media(prefers-reduced-motion:reduce){*{animation:none!important}}</style>
+<rect width="1280" height="680" fill="#0c0c0e"/><defs>
+<radialGradient id="heat"><stop stop-color="#ff482b" stop-opacity=".25"/><stop offset="1" stop-color="#ff482b" stop-opacity="0"/></radialGradient>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#303033" stroke-width=".6"/></pattern>
+<style>
+.spin{animation:spin 24s linear infinite;transform-origin:964px 304px} .reverse{animation:spin 40s linear infinite reverse;transform-origin:964px 304px}
+.pulse{animation:pulse 4s ease-in-out infinite} .scan{animation:scan 7s linear infinite} .flicker{animation:flicker 8s steps(1) infinite}
+@keyframes spin{to{transform:rotate(360deg)}} @keyframes pulse{50%{opacity:.35}} @keyframes scan{to{transform:translateY(520px)}} @keyframes flicker{0%,94%,98%,100%{opacity:1}95%,97%{opacity:.12}}
+</style></defs>
+<rect x="700" y="65" width="540" height="465" fill="url(#grid)"/>
+<circle cx="964" cy="304" r="255" fill="url(#heat)"/>
+<path d="M32 68H1248M32 550H1248" stroke="#303033"/>
+<text x="32" y="40" fill="#99958d" font-size="13" font-weight="400" class="mono" letter-spacing="2">A / B     EXPERIMENTAL SYSTEMS DIVISION</text>
+<circle cx="1030" cy="35" r="4" fill="#ff482b" class="pulse"/>
+<text x="1044" y="40" fill="#ff482b" font-size="13" font-weight="400" class="mono" letter-spacing="2">CORE ONLINE</text>
+<text x="32" y="121" fill="#99958d" font-size="13" font-weight="400" class="mono" letter-spacing="2">001 / IDENTITY</text>
+<text x="25" y="262" fill="#ede9df" font-size="162" font-weight="900" letter-spacing="-10">AFTER</text>
+<text x="25" y="406" fill="#ede9df" font-size="137" font-weight="900" letter-spacing="-8">BURNERR</text>
+<rect x="35" y="440" width="268" height="35" fill="#ff482b"/>
+<text x="48" y="463" fill="#0c0c0e" font-size="15" font-weight="700" class="mono">RUN BEYOND THE DEFAULT.</text>
+<text x="35" y="513" fill="#99958d" font-size="15" font-weight="400" class="mono">AI TOOLING / AUTOMATION / GAME SYSTEMS</text>
+<g fill="none" stroke="#ff482b">
+<circle cx="964" cy="304" r="187" stroke-opacity=".35"/>
+<circle cx="964" cy="304" r="165" stroke-width="2" stroke-dasharray="2 14" class="reverse"/>
+<circle cx="964" cy="304" r="144" stroke-width="14" stroke-dasharray="140 86 16 86" class="spin"/>
+<circle cx="964" cy="304" r="119" stroke-opacity=".4"/>
+<ellipse cx="964" cy="304" rx="83" ry="119" transform="rotate(35 964 304)"/>
+<ellipse cx="964" cy="304" rx="83" ry="119" transform="rotate(-35 964 304)"/>
+<ellipse cx="964" cy="304" rx="119" ry="39"/>
+<path d="M964 99V146M964 462V509M759 304H806M1122 304H1169"/>
+</g>
+<circle cx="964" cy="304" r="57" fill="#ff482b" class="pulse"/>
+<text x="964" y="317" fill="#0c0c0e" font-size="36" font-weight="900" text-anchor="middle" letter-spacing="-3">A/B</text>
+<text x="964" y="87" fill="#99958d" font-size="10" font-weight="400" class="mono" text-anchor="middle" letter-spacing="2">AFTERBURNER REACTOR / R-01</text>
+<text x="964" y="535" fill="#99958d" font-size="10" font-weight="400" class="mono" text-anchor="middle" letter-spacing="2">EXPERIMENTAL · UNCONVENTIONAL</text>
+<rect x="723" y="74" width="497" height="1" fill="#ff482b" opacity=".18" class="scan"/>
+<text x="32" y="597" fill="#ede9df" font-size="28" font-weight="800" >BUILD TOOLS.</text>
+<text x="32" y="633" fill="#ede9df" font-size="28" font-weight="800" >BREAK ROUTINES.</text>
+<text x="600" y="598" fill="#ede9df" font-size="18" font-weight="400" class="mono">Go · Python · TypeScript · Java</text>
+<text x="600" y="630" fill="#99958d" font-size="16" font-weight="400" >From local agents to multiplayer worlds.</text>
+<text x="1247" y="663" fill="#99958d" font-size="10" font-weight="400" class="mono" text-anchor="end" letter-spacing="2">AFTERBURNERR // FIELD NOTES</text>
+</svg>
