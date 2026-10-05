@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>afterburnerr / night shift prototype</title>
+  <style>
+    :root { color-scheme:dark; background:#0d1226; font:14px/1.5 ui-monospace,monospace; color:#e9e6d7; }
+    body { max-width:1200px; margin:24px auto; padding:0 18px; }
+    object { display:block; width:100%; aspect-ratio:1200/700; border:1px solid #30385d; background:#11182f; }
+    .controls { display:flex; gap:10px; align-items:center; margin:12px 0; }
+    button { font:inherit; color:#11182f; background:#ffd166; border:0; padding:9px 14px; cursor:pointer; }
+    button.secondary { background:#73d6cf; }
+    button:focus-visible { outline:3px solid #e9e6d7; outline-offset:3px; }
+    .note { color:#9296ad; margin:0; }
+  </style>
+</head>
+<body>
+  <object id="scene" data="scene.svg" type="image/svg+xml" aria-label="The afterburnerr night shift"></object>
+  <div class="controls" aria-label="Prototype controls">
+    <button id="resume" type="button">resume shift</button>
+    <button id="pause" class="secondary" type="button">freeze the worker</button>
+    <span class="note" id="state" role="status">the janitor is moving</span>
+  </div>
+  <p class="note">A browser-only prototype: GitHub will display the animated SVG, while these controls are for trying the scene locally.</p>
+  <script>
+    const object = document.querySelector('#scene');
+    const state = document.querySelector('#state');
+    function setState(manual) {
+      const svg = object.contentDocument && object.contentDocument.documentElement;
+      if (!svg) return;
+      svg.classList.toggle('manual', manual);
+      state.textContent = manual ? 'frozen: everything is still in the wrong window' : 'the janitor is moving';
+    }
+    object.addEventListener('load', () => setState(false));
+    document.querySelector('#pause').addEventListener('click', () => setState(true));
+    document.querySelector('#resume').addEventListener('click', () => setState(false));
+  </script>
+</body>
+</html>
