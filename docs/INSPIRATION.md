@@ -15,10 +15,10 @@ The wordmark is original. Its lettering is outlined from Nimbus Sans Bold so it 
 
 Palette: light ink `#1f2328`, dark ink `#f0f3f6`, light accent `#bc441c`, dark accent `#ff875f`. Backgrounds come from GitHub itself. The accent appears only in the symbol.
 
-The layout is left aligned. The header scales to its container; the sentence and language list remain native, selectable text. No animation, statistics, project cards, external image services, or scheduled jobs are needed.
+The layout is left aligned. The header scales to its container; the language list remains native, selectable text. The profile has no introductory tagline or project cards. An orange snake visualizes the contribution graph below the wordmark. See [snake setup](SNAKE.md) and [automated activity](ACTIVITY.md).
 
 The previous design is retained in Git history.
 
 ## Editing
 
-Edit `README.md` to change the introduction. Edit the two files in `assets/` together to change the wordmark. A new project can be pinned on GitHub when it is ready; this README does not need a placeholder portfolio.
+Edit `README.md` to change the visible profile content. Edit the two files in `assets/` together to change the wordmark. A new project can be pinned on GitHub when it is ready; this README does not need a placeholder portfolio.

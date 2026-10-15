@@ -1,0 +1,63 @@
+name: Contribution snake
+
+on:
+  schedule:
+    - cron: '23 3 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/snake.yml']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: contribution-snake-${{ github.repository }}
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out profile
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: true
+
+      - name: Generate light and dark snakes
+        uses: Platane/snk/svg-only@d8f6715049803e982ee5ff501b6b9b7d5deeb09b # v3.5.0
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-snake.svg?palette=github-light&color_snake=#bc441c
+            dist/github-snake-dark.svg?palette=github-dark&color_snake=#ff875f
+
+      - name: Publish SVGs to snake branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          snake_output=$(mktemp -d "$RUNNER_TEMP/snake.XXXXXX")
+          trap 'rm -rf "$snake_output"' EXIT
+          cp dist/github-snake.svg dist/github-snake-dark.svg "$snake_output/"
+
+          # Keep the profile's main branch untouched and retain output history.
+          git ls-remote --heads origin refs/heads/snake > "$snake_output/remote-ref"
+          if [[ -s "$snake_output/remote-ref" ]]; then
+            git fetch --no-tags origin refs/heads/snake:refs/remotes/origin/snake
+            git switch --force-create snake refs/remotes/origin/snake
+          else
+            git switch --orphan snake
+          fi
+
+          cp "$snake_output/github-snake.svg" "$snake_output/github-snake-dark.svg" .
+          git add -- github-snake.svg github-snake-dark.svg
+          if git diff --cached --quiet; then
+            echo 'Snake SVGs are already current.'
+            exit 0
+          fi
+
+          git -c user.name='github-actions[bot]' \
+            -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+            commit -m 'chore: update contribution snake'
+          git push origin HEAD:refs/heads/snake
