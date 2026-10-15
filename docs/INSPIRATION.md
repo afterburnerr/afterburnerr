@@ -1,48 +1,24 @@
-# The Reference Archive
+# Profile direction
 
-15 необычных GitHub-профилей и механика, которая делает их интересными. Проверено 5 октября 2026 года: актуальные README, выборочно исходники изображений, доступность ресурсов и история автоматизации. Это авторская подборка, а не объективный рейтинг всех профилей GitHub.
+Reviewed on 15 October 2026. These are references for restraint, not a ranking.
 
-## Живые визуальные эксперименты
+- [Anthony Fu](https://github.com/antfu): a very compact profile README built around a single line of links.
+- [Paco Coursey](https://github.com/pacocoursey): a sparse profile; no profile README at the time of review.
+- [Shu Ding](https://github.com/shuding): concise bio and personal links; no profile README at the time of review.
+- [Sindre Sorhus](https://github.com/sindresorhus): an intentionally maximalist retro profile. Reviewed as a contrast, not used as a minimalist reference.
 
-| Профиль | Что смотреть | Проверка |
-| :--- | :--- | :--- |
-| [flycran](https://github.com/flycran/flycran) | Клетки contribution graph падают под действием гравитации и сталкиваются с надписью. Физика вместо привычной статистики. | SVG доступен; анимация есть в исходнике. |
-| [BlessedRebuS](https://github.com/BlessedRebuS/BlessedRebuS) | Сценка загрузки Arch/Linux: kernel/systemd-логи, спиннер и переход к `whoami`. | Анимированный SVG доступен. |
-| [0xharkirat](https://github.com/0xharkirat/0xharkirat) | Анимированный dither-портрет и отдельные изображения для светлой/тёмной темы. | SVG доступен; обновление профиля 4 октября. |
-| [jh3y](https://github.com/jh3y/jh3y) | Вращающийся драгоценный камень как практически весь профиль. Одна выразительная форма. | SVG доступен, около 8 КБ. |
-| [egorthinks](https://github.com/egorthinks/egorthinks) | Процедурный пиксельный бонсай из истории GitHub; рост и покачивание дерева. | GIF доступен; последнее обновление дерева 11 августа. |
+## Design
 
-## Профили, в которых посетитель меняет состояние
+The nickname is the visual anchor. Two slanted strokes suggest an afterburner without turning the profile into a dashboard. Everything else uses GitHub's native text rendering.
 
-| Профиль | Механика | Проверка |
-| :--- | :--- | :--- |
-| [timburgan](https://github.com/timburgan/timburgan) | Общая шахматная партия. Ссылка хода создаёт Issue; Action проверяет ход и перестраивает доску. | Игра обновлялась 5 октября. |
-| [rossjrw](https://github.com/rossjrw/rossjrw) | Royal Game of Ur: SVG-доска, команды посетителей, броски костей и история игры. | Последний ход 4 октября; партия №30. |
-| [JonathanGin52](https://github.com/JonathanGin52/JonathanGin52) | Connect Four, таблица победителей и запрос хода у бота. | Обновление 5 октября; README сообщает о 999 завершённых играх. |
-| [evaristocuesta](https://github.com/evaristocuesta/evaristocuesta) | Сапёр с клетками-ссылками и флагами через Issues. .NET пересобирает README. | Игровой коммит 26 сентября; три последних workflow runs успешны. |
-| [kylepls](https://github.com/kylepls/kylepls) | Крестики-нолики как граф состояний из Markdown-якорей. Ссылки заменяют игровую логику. | Исходник доступен; сервер не нужен. Автор предупреждает о тяжёлом рендеринге эмодзи. |
-| [benjaminsampica](https://github.com/benjaminsampica/benjaminsampica) | README как RPG: класс персонажа, бросок инициативы, последний игрок. | Репозиторий обновлялся 3 октября; игра отдельно не проигрывалась. |
+The wordmark is original. Its lettering is outlined from Nimbus Sans Bold so it renders consistently without fetching fonts. Light and dark variants have transparent backgrounds and are selected with `<picture>`.
 
-## Радикальная веб-эстетика и исторические эксперименты
+Palette: light ink `#1f2328`, dark ink `#f0f3f6`, light accent `#bc441c`, dark accent `#ff875f`. Backgrounds come from GitHub itself. The accent appears only in the symbol.
 
-| Профиль | Идея | Ограничения |
-| :--- | :--- | :--- |
-| [BrunnerLivio](https://github.com/BrunnerLivio/brunnerlivio) | Страница из 1990-х: вращающийся глобус, GIF, Notepad/IE и гостевая книга. | Гостевая книга обновлялась 4 сентября. |
-| [fnky](https://github.com/fnky/fnky) | Горящее Welcome, вентилятор, смайлик, гостевая книга, Internet Explorer. | Внешний Glitch-счётчик умер: HTTP 410. Художественный референс сохранился. |
-| [JessicaLim8](https://github.com/JessicaLim8/JessicaLim8) | Посетители совместно создают и перемешивают облако слов через Issues. | Исторический референс; последний коммит 2023 года. Работу автоматики не подтверждали. |
-| [HFO4](https://github.com/HFO4/HFO4) | Общий Game Boy/Pokémon: скриншот эмулятора и картинки-кнопки. | Архитектура видна в README; endpoint изображения ответил HTTP 403. Текущая игра не подтверждена. |
+The layout is left aligned. The header scales to its container; the sentence and language list remain native, selectable text. No animation, statistics, project cards, external image services, or scheduled jobs are needed.
 
-## Ещё источники
+The previous design is retained in Git history.
 
-- [awesome-github-profile-readme](https://github.com/abhisheknaiidu/awesome-github-profile-readme) — большой каталог профилей по категориям.
-- [creative-profile-readme](https://github.com/coderjojo/creative-profile-readme) — необычные игровые и визуальные README.
-- [awesome-github-profile](https://github.com/beydemirfurkan/awesome-github-profile) — шаблоны, включая SVG-авангард, голографию, генеративную графику и печатную эстетику.
-- [GitHub: managing your profile README](https://docs.github.com/en/account-and-profile/how-tos/profile-customization/managing-your-profile-readme) — требования к профильному репозиторию.
+## Editing
 
-## Наше решение: CORE OVERDRIVE
-
-Имя afterburnerr стало основой образа: экспериментальная установка, работающая за пределами штатного режима. Гигантская типографика, почти чёрный фон, тёплый белый и сигнальный красный. Вращающийся реактор, сканирующий луч, карточки реальных проектов и спектральная подпись, порождённая именами публичных репозиториев.
-
-Графика и генератор написаны с нуля. Код и изображения чужих профилей не копировались. Статистика использует только оригинальные публичные репозитории, без форков и самого профильного репозитория. Спектральная подпись — генеративное искусство, а не график активности. Обновление идёт раз в сутки; сторонние сервисы карточек не используются.
-
-Настройка: править `scripts/build.py`, затем запустить `python3 scripts/build.py`. Достаточно Python 3 со стандартной библиотекой. `GH_TOKEN` необязателен локально; в Actions используется встроенный токен. Для защиты от случайной публикации приватных данных источником служит публичный endpoint `users/afterburnerr/repos`, дополнительно исключаются записи с `private: true`.
+Edit `README.md` to change the introduction. Edit the two files in `assets/` together to change the wordmark. A new project can be pinned on GitHub when it is ready; this README does not need a placeholder portfolio.
