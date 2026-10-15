@@ -3,10 +3,13 @@
 `.github/workflows/snake.yml` generates an animated SVG from the repository owner's
 GitHub contribution calendar with [Platane/snk](https://github.com/Platane/snk).
 The orange snake matches the profile wordmark and supports light and dark themes.
+[`scripts/style_snake.py`](../scripts/style_snake.py) removes the lower score bar
+and pads incomplete weeks with neutral cells. Padding is decorative, static, and
+does not represent contributions; the real cells and snake animation are preserved.
 
 The workflow runs daily at **03:23 UTC (08:23 Yekaterinburg)**, can be started with
 **Actions → Contribution snake → Run workflow**, and runs when its workflow file
-changes on `main`. Scheduled runs can be delayed by GitHub.
+or its styling script changes on `main`. Scheduled runs can be delayed by GitHub.
 
 Generated files live on the separate `snake` branch:
 
